@@ -1,6 +1,7 @@
+import { ModalFromRightEnter, ModalFromRightLeave, ModalScaleEnter, ModalScaleLeave } from './modal.transition';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Config } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 
@@ -13,7 +14,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      backButtonText:'',
+      menuType: 'overlay',
+      backButtonIcon:'ios-arrow-back',
+      iconMode:'ios',
+      tabsHideOnSubPages:'true', //从这个页面跳出去不带tab
+      swipeBackEnabled:true //手势返回开关
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,4 +33,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(public config: Config){
+    this.setCustomTransition();
+  }
+   /**
+    * 设置自定义的过渡动画
+    */
+  setCustomTransition():void{
+    this.config.setTransition('modal-from-right-enter', ModalFromRightEnter);
+    this.config.setTransition('modal-from-right-leave', ModalFromRightLeave);
+    this.config.setTransition('modal-scale-enter', ModalScaleEnter);
+    this.config.setTransition('modal-scale-leave', ModalScaleLeave);
+  }
+}
