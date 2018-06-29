@@ -51,7 +51,7 @@ export class ModalScaleEnter extends PageTransition {
     super.init();
     const ele = this.enteringView.pageRef().nativeElement;
     const wrapper = new Animation(this.plt, ele.querySelector('.modal-wrapper'));
-    wrapper.beforeStyles({ 'opacity': 1 });
+    wrapper.beforeStyles({ 'opacity': 1});
     wrapper.fromTo('transform', 'scale(0)', 'scale(1)');
 
     this

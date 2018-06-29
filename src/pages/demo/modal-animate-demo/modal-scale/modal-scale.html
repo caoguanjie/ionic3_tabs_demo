@@ -1,5 +1,33 @@
 
-
-<ion-content padding>
-  <button ion-button (click)="dismiss()">关闭</button>
-</ion-content>
+<!-- <ion-header no-border>
+  <ion-navbar mode='md'>
+    <ion-title mode='md'>单选</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list no-lines>
+        <button ion-item class="checkbox-list" mode='md' *ngFor="let item of items" (click)="changeValue(item)">
+          <div item-start tappable>
+              <ion-icon name="radio-button-off" *ngIf="!item.isSelect"></ion-icon>
+              <ion-icon name="checkmark-circle"  *ngIf="item.isSelect" [ngStyle]="{'color':item.isSelect? '#29a1f7':'' }"></ion-icon>
+          </div>
+         <ion-label>{{item.name}}</ion-label>
+        </button>
+      </ion-list>
+   
+</ion-content> 
+<ion-footer no-border>
+  <div class="cancel" tappable (click)="dismiss()">取消</div>
+  <div class="ok" tappable>确定</div>
+</ion-footer> -->
+<div class="my-modal-wrapper">
+<ion-list no-lines>
+    <button ion-item class="checkbox-list" mode='md' *ngFor="let item of items" (click)="changeValue(item)">
+      <div item-start tappable>
+          <ion-icon name="radio-button-off" *ngIf="!item.isSelect"></ion-icon>
+          <ion-icon name="checkmark-circle"  *ngIf="item.isSelect" [ngStyle]="{'color':item.isSelect? '#29a1f7':'' }"></ion-icon>
+      </div>
+     <ion-label>{{item.name}}</ion-label>
+    </button>
+  </ion-list>
+</div>

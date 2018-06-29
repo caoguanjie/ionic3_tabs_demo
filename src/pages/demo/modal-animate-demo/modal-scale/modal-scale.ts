@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'modal-scale.html',
 })
 export class ModalScalePage {
-
+  items = [];
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -23,9 +23,17 @@ export class ModalScalePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalScalePage');
+    this.items = [
+      {name:"选项一",isSelect:false},
+      {name:"选项2",isSelect:false},
+      {name:"选项3",isSelect:false},
+      {name:"选项4",isSelect:false}
+    ]
   }
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+  changeValue(item){
+    item.isSelect = !item.isSelect;
   }
 }

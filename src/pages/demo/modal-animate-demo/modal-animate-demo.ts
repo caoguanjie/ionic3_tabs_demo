@@ -27,6 +27,7 @@ export class ModalAnimateDemoPage {
   }
   scaleModalScalePage() {
     this.modalCtrl.create("ModalScalePage", {}, {
+      cssClass:"alertModal",
       enterAnimation: 'modal-scale-enter',
       leaveAnimation: 'modal-scale-leave'
     }).present();

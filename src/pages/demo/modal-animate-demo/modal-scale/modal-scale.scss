@@ -1,3 +1,69 @@
 page-modal-scale {
 
 }
+.alertModal{
+    // display: flex;
+    // flex-flow: row nowrap;
+    // align-items: center;
+    // justify-content: center;
+    .modal-wrapper{
+        // height: auto;
+        // min-height: 25rem;
+        // max-height: 90%;
+        // width:25rem;
+    }
+    .scroll-content{
+        // max-height: 240px;
+    }
+    .ion-page{
+        pointer-events:none
+        // position: relative;
+        // border-radius: .4rem;
+        // box-shadow: 0 .4rem .4rem rgba(0, 17, 30, 0.1);
+    }
+    ion-footer{
+       height: 4.5rem;
+       display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #dddddd;
+    }
+    ion-footer>div{
+        width:50%;
+        line-height: 4.5rem;
+        color: #ffffff;
+        font-size:1.5rem;
+        text-align: center;
+        display: inline-block;
+    }
+    .ok{
+        background-color: #108ee9;
+    }
+    .list-md .item-block .item-inner,.list-ios .item-block .item-inner{
+        border:  0;
+    }
+    .checkbox-list{
+        padding-left: 2.5rem;
+        border-bottom: 1px solid #ddd!important;
+    }
+    .list-md,.list-ios{
+        margin:0;
+    }
+    ion-icon{
+        font-size:2rem;
+        color: #ccc;
+    }
+    .my-modal-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    }
+    ion-list{
+        width:25rem;
+        min-height: 25rem;
+    }
+}
