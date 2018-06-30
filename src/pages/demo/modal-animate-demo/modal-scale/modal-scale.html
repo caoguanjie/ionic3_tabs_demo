@@ -1,33 +1,22 @@
-
-<!-- <ion-header no-border>
-  <ion-navbar mode='md'>
-    <ion-title mode='md'>单选</ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content>
+<!-- 不能用ion-content标签，不然会出现一闪而过的滚动条，最好的样式还是自己写得好 -->
+<!-- 经过调试发现，弹性布局的样式，原来可以影响绝对定位里面所有样式。 -->
+<div class="my-modal-box">
+  <div class="my-modal-mask" (click)="dismiss()" tappable></div>
+  <div class="my-modal-wrapper">
+    <div class="modal-header">单选</div>
     <ion-list no-lines>
-        <button ion-item class="checkbox-list" mode='md' *ngFor="let item of items" (click)="changeValue(item)">
-          <div item-start tappable>
-              <ion-icon name="radio-button-off" *ngIf="!item.isSelect"></ion-icon>
-              <ion-icon name="checkmark-circle"  *ngIf="item.isSelect" [ngStyle]="{'color':item.isSelect? '#29a1f7':'' }"></ion-icon>
-          </div>
-         <ion-label>{{item.name}}</ion-label>
-        </button>
-      </ion-list>
-   
-</ion-content> 
-<ion-footer no-border>
-  <div class="cancel" tappable (click)="dismiss()">取消</div>
-  <div class="ok" tappable>确定</div>
-</ion-footer> -->
-<div class="my-modal-wrapper">
-<ion-list no-lines>
-    <button ion-item class="checkbox-list" mode='md' *ngFor="let item of items" (click)="changeValue(item)">
-      <div item-start tappable>
+      <button ion-item class="checkbox-list" mode='md' *ngFor="let item of items" (click)="changeValue($event,item)">
+        <div item-start tappable>
           <ion-icon name="radio-button-off" *ngIf="!item.isSelect"></ion-icon>
-          <ion-icon name="checkmark-circle"  *ngIf="item.isSelect" [ngStyle]="{'color':item.isSelect? '#29a1f7':'' }"></ion-icon>
-      </div>
-     <ion-label>{{item.name}}</ion-label>
-    </button>
-  </ion-list>
+          <ion-icon name="checkmark-circle" *ngIf="item.isSelect" [ngStyle]="{'color':item.isSelect? '#29a1f7':'' }"></ion-icon>
+        </div>
+        <ion-label>{{item.name}}</ion-label>
+      </button>
+    </ion-list>
+    <div class="my-modal-footer">
+      <div class="cancel" tappable (click)="dismiss()">取消</div>
+      <div class="ok" tappable>确定</div>
+    </div>
+  </div>
 </div>
+<!-- </ion-content> -->
