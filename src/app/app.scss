@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+/*=================================================================*/
+/*toast弹出提示自定义样式*/
+.myToastStyle{
+    text-align: center;
+    border-radius:5px;
+    margin: 0 auto;
+  }
+  .myToastStyle .toast-message{
+    flex:none;
+    -webkit-box-flex:none;
+    -webkit-flex: none;
+    display: inline;
+    margin: 0 auto;
+    background: rgba(0,0,0,.7);
+    border-radius: 4px;
+  }
+  .myToastStyle>.toast-wrapper{
+    background: none;
+  }
+  /*=================================================================*/
