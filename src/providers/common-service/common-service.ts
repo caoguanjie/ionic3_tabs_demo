@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { Platform, Keyboard, IonicApp, Nav } from 'ionic-angular';
 import { ToastServiceProvider } from '../toast-service/toast-service';

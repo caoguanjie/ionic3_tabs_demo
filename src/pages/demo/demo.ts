@@ -15,7 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DemoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+  ) {
   }
 
   ionViewDidLoad() {
@@ -24,7 +27,13 @@ export class DemoPage {
   /**
    * 前往model自定义过渡动画页
    */
-  goModalTransitionPage(){
+  goModalTransitionPage() {
     this.navCtrl.push('ModalAnimateDemoPage');
-  }  
+  }
+  /**
+   * 前往自定义消息框
+   */
+  goToastPage() {
+    this.navCtrl.push('ToastDemoPage');
+  }
 }
