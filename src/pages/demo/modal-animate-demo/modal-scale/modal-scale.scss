@@ -1,83 +1,116 @@
 page-modal-scale {}
 
 .alertModal {
-  .my-modal-footer {
-    height: 4.5rem;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    background-color: #dddddd;
-    border-bottom-right-radius: .4rem;
-    border-bottom-left-radius: .4rem;
-    overflow: hidden;
+  .list{
+    border-top: 1px solid #dedede;
+    // border-bottom: 1px solid #dedede;
   }
-  .my-modal-footer>div {
-    width: 50%;
-    line-height: 4.5rem;
-    color: #ffffff;
-    font-size: 1.5rem;
-    text-align: center;
-    display: inline-block;
+  .list>button:last-child{
+    border:0;
   }
-  .ok {
-    background-color: #108ee9;
-  }
-  .list-md .item-block .item-inner,
-  .list-ios .item-block .item-inner {
-    border: 0;
-  }
-  .checkbox-list {
-    padding-left: 2.5rem;
-    border-bottom: 1px solid #ddd !important;
-  }
-  .list-md,
-  .list-ios {
-    margin: 0;
-  }
-  ion-icon {
-    font-size: 2rem;
-    color: #ccc;
-  }
-  ion-content {
-    background-color: transparent;
-  }
-  .my-modal-box {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-  }
-  .my-modal-mask {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .my-modal-wrapper {
-    position: relative;
-    z-index: 5;
-    width: 25rem;
-    background-color: #fff;
-    border-radius: .4rem;
-    box-shadow: 0 .4rem .4rem rgba(0, 17, 30, 0.1);
-  }
-  ion-list {
-    width: 100%;
-    max-height: 20rem;
-    overflow-y: auto;
-  }
-  .modal-header {
-    padding: 1rem 1rem 1rem 2.5rem;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    color: #333;
-    border-bottom: 1px solid #bbb;
-  }
+    .my-modal-footer {
+      height: 4.5rem;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+    }
+    .my-modal-footer>div {
+      width: 50%;
+      height: 4.5rem;
+      min-height: 50px;
+      text-align: center;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .my-modal-footer>div>span{
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+    .cancel{
+      background-color: #dddddd;
+    }
+    .ok {
+      background-color: #108ee9;
+    }
+    .list-md .item-block .item-inner,
+    .list-ios .item-block .item-inner {
+      border: 0;
+    }
+    .checkbox-list {
+      padding-left: 2.5rem;
+      border-bottom: 1px solid #ddd !important;
+    }
+    .list-md,
+    .list-ios {
+      margin: 0;
+    }
+    .myicon {
+      font-size: 2rem;
+      color: #ccc;
+    }
+    ion-content {
+      background-color: transparent;
+    }
+    .my-modal-box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .my-modal-mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .my-modal-wrapper {
+      position: relative;
+      z-index: 5;
+      width: 25rem;
+      background-color: #fff;
+      border-radius: .4rem;
+      overflow: hidden;
+      box-shadow: 0 .4rem .4rem rgba(0, 17, 30, 0.1);
+    }
+    ion-list {
+      width: 100%;
+      max-height: 20rem;
+      overflow-y: auto;
+    }
+    .modal-header {
+      padding: 1.3rem 1rem 1.3rem 2.5rem;
+      font-size: 2rem;
+      color: #333;
+      min-height: 50px;
+      background-color: #eee;
+    }
+    .item-block{
+      height: 4.5rem;
+      min-height: 50px;
+    }
+    .scaleAnimation {
+      animation: anim-scale .2s cubic-bezier(0.36, 0.66, 0.04, 1);
+    }
+    @keyframes anim-scale {
+      0% {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+      }
+    }
 }

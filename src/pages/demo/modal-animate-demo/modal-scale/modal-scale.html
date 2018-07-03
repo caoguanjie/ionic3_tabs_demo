@@ -1,6 +1,6 @@
 <!-- 不能用ion-content标签，不然会出现一闪而过的滚动条，最好的样式还是自己写得好 -->
 <!-- 经过调试发现，弹性布局的样式，原来可以影响绝对定位里面所有样式。 -->
-<div class="my-modal-box">
+<!-- <div class="my-modal-box scaleAnimation">
   <div class="my-modal-mask" (click)="dismiss()" tappable></div>
   <div class="my-modal-wrapper">
     <div class="modal-header">单选</div>
@@ -18,5 +18,43 @@
       <div class="ok" tappable>确定</div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- </ion-content> -->
+
+
+<!-- 不能用ion-content标签，不然会出现一闪而过的滚动条，最好的样式还是自己写得好 -->
+<!-- 经过调试发现，弹性布局的样式，原来可以影响绝对定位里面所有样式。 -->
+<div class="my-modal-box scaleAnimation">
+  <div class="my-modal-mask" (click)="dismiss()" tappable></div>
+  <div class="my-modal-wrapper">
+    <div class="modal-header" *ngIf="packages.isShowBtn">{{packages.title}}</div>
+    <ion-list no-lines *ngIf="packages.type && packages.type == 'radio'">
+      <button ion-item class="checkbox-list" mode='md' *ngFor="let item of packages.radioArray;index as i" (click)="changeValue($event,item,i)">
+        <div item-start tappable *ngIf="packages.isShowBtn">
+          <ion-icon name="radio-button-off" color="myicon" *ngIf="!item.isSelected" style="color:#ccc"></ion-icon>
+          <ion-icon name="checkmark-circle"  color="myicon" *ngIf="item.isSelected" style="color:#29a1f7"></ion-icon>
+        </div>
+        <ion-label [ngStyle]="{'color': item.isSelected ? '#29a1f7' : '#333'}">{{item.name}}</ion-label>
+        <ion-icon name="checkmark" item-end [ngStyle]="{'color': item.isSelected ? '#29a1f7' : '', 'font-size': '3.5rem', 'margin':'0 10px'}"
+          *ngIf="!packages.isShowBtn && item.isSelected"></ion-icon>
+      </button>
+    </ion-list>
+    <ion-list no-lines *ngIf="packages.type && packages.type == 'checkbox'">
+      <button ion-item class="checkbox-list" mode='md' *ngFor="let item of packages.radioArray; index as i" (click)="changeValue($event,item,i)">
+        <div item-start tappable>
+          <ion-icon name="checkbox-outline"  color="myicon" *ngIf="!item.isSelected" style="color:#ccc"></ion-icon>
+          <ion-icon name="checkbox"  color="myicon" *ngIf="item.isSelected" style="color:#29a1f7"></ion-icon>
+        </div>
+        <ion-label>{{item.name}}</ion-label>
+      </button>
+    </ion-list>
+    <div class="my-modal-footer" *ngIf="packages.isShowBtn">
+      <div class="cancel" tappable (click)="dismiss()">
+        <span>{{packages.okBtnText? packages.okBtnText : '取消'}}</span>
+      </div>
+      <div class="ok" tappable (click)="ok()">
+        <span>{{packages.okBtnText? packages.okBtnText : '确定'}}</span>
+      </div>
+    </div>
+  </div>
+</div>

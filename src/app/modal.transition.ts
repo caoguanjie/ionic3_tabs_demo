@@ -85,7 +85,7 @@ export class ModalScaleEnter extends PageTransition {
         .element(this.enteringView.pageRef())
         // .easing('cubic-bezier(.1, .7, .1, 1)')
         .easing('cubic-bezier(0.36,0.66,0.04,1)')
-        .duration(300)
+        // .duration(200)
         .add(backdrop)
         .add(wrapper)
         // .add(contentWrapper)

@@ -16,4 +16,15 @@
 <ion-content padding>
   <button ion-button block (click)="scaleModalScalePage()">用modal层做弹窗效果</button>
   <button ion-button block color="secondary" (click)="presentModalFromRightPage()">modal动画2</button>
+  <ion-card>
+    <ion-card-header>
+      不同状态下的弹窗
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button color="light" round (click)="click1()">有头部有底部的弹窗</button>
+      <button ion-button round (click)="click2()">没头部没底部</button>
+      <button ion-button color="secondary" (click)="click3()" round>多选框</button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
