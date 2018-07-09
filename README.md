@@ -27,4 +27,4 @@
   },
 ```
 
-具体逻辑实现的办法，在src同级目录下的config/webpack.config.js文件中实现
+具体逻辑实现的办法，在src同级目录下的config/webpack.config.js文件中实现，在该文件中除了单纯的api的地址切换，还有一些包名、APP名字，极光推送的切换的一些方法。
